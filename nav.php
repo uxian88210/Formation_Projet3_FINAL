@@ -20,7 +20,7 @@
 					 	<?php 
 					 		//mise en forme du numero de téléphone
 							$telephone = get_field('telephone', 'options');
-							$telephoneSubZero = substr($telephone, 1, -1);
+							$telephoneSubZero = substr($telephone, 1);
 							$telephoneFinal = str_replace(' ', '', $telephoneSubZero);
 						?>
 						 <div class="lctr">

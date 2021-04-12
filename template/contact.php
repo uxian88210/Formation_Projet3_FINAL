@@ -25,7 +25,13 @@ get_header();
 						</div>
 						<div class="address">
 							<h5><?php the_field('titre_2') ?></h5>
-							<p><a href="tel:+33<?php echo $telephoneFinal ?>">Tel: <?php the_field('telephone', 'options') ?></a>,
+							<?php 
+						 		//mise en forme du numero de téléphone
+								$telephone = get_field('telephone', 'options');
+								$telephoneSubZero = substr($telephone, 1);
+								$telephoneFinal = str_replace(' ', '', $telephoneSubZero);
+							?>
+							<p><a href="tel:+33<?php echo $telephoneFinal ?>">Tel: <?php the_field('telephone', 'options') ?></a>
 							<span>
 							<?php if (get_field('fax', 'options')) {
 								?>
